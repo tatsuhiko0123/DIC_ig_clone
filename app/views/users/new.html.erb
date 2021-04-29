@@ -1,2 +1,31 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h2>登録して友達の写真や動画をチェックしよう</h2>
+<% if @user.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= @user.errors.count%>件のエラーより<%= @user.name if @user.name %><%= "ユーザ"  if @user.name.empty? %>の登録ができませんでした。</h2>
+		<ul>
+		<% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+<%= form_with(model: @user, local: true) do |f| %>
+  <p class="text"><%= f.label :名前 %></p>
+  <p class="textarea"><%= f.text_field :name %></p>
+  <p class="text"><%= f.label :メールアドレス %></p>
+  <p class="textarea"><%= f.email_field :email %></p>
+  <p class="text"><%= f.label :パスワード %></p>
+  <p class="textarea"><%= f.password_field :password %></p>
+  <p class="text"><%= f.label :パスワード確認 %></p>
+  <p class="textarea"><%= f.password_field :password_confirmation %></p>
+  <p>
+    <%= f.label "画像" %>
+    <% if @user.image.url  %>
+      <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+    <% end %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </p>
+  <%= f.submit "アカウント編集" %><br><br>
+  <%= f.submit "登録する" %>
+<% end %>

@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
   end
   def new
     @picture = Picture.new
-
+    @picture.user_id = current_user.id
   end
   def create
     @picture = current_user.pictures.build(picture_params)
