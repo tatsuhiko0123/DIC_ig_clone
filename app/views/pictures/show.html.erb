@@ -1,2 +1,8 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<h1>詳細画面</h1>
+<p class="text">タイトル : <%= @picture.title %></p>
+<p class="text">内容 : <%= @picture.content %></p>
+<p>
+  <strong>Image : </strong>
+  <%= image_tag @picture.image.url %>
+</p>
+<span class="link_btn"><%= link_to "一覧画面にもどる", pictures_path %></span>

@@ -1,2 +1,7 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<h1>投稿一覧</h1>
+<p><%= notice %></p>
+<% @pictures.each do |picture| %>
+  <%= picture.title %>
+  <%= link_to '詳細を見る', picture_path(picture.id) %>
+<% end %>
+<%= link_to '投稿', new_picture_path %>

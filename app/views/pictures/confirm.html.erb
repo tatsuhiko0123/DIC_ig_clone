@@ -1,2 +1,11 @@
-<h1>Pictures#confirm</h1>
-<p>Find me in app/views/pictures/confirm.html.erb</p>
+<h3>以下の内容で、送信する</h3>
+<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <p class="text">タイトル : <%= @picture.title %></p>
+  <p class="text">本文 : <%= @picture.content %></p>
+  <p>image : <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %></p>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit  "投稿する" %><br><br>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
