@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   
+  skip_before_action :login_required, only: [:new, :create] 
   def new
     @user = User.new
   end
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    redirect_to pictures_path
   end
   def edit
     @user = User.find(params[:id])
