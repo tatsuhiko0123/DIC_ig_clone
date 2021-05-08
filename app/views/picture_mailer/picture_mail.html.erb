@@ -1,0 +1,7 @@
+<h1>投稿されました</h1>
+<p><strong>投稿者:</strong><%= @picture.user.name %></p>
+<p><strong>タイトル:</strong><%= @picture.title %></p>
+<p><strong>本文:</strong><%= @picture.content %></p>
+<% if @picture.image.url  %>
+<p><strong>画像:</strong><p><%= image_tag @picture.image.url , width: 200 %></p>
+<% end %>
