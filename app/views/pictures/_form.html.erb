@@ -16,13 +16,13 @@
     <%= form.hidden_field :image_cache %>
   </div>
       <div class="picture_title">
-      <%= form.label :タイトル %>
+      <p><%= form.label :タイトル %></p>
       <%= form.text_field :title %>
     </div>
   <div class="picture_content">
-    <p class="text"><%= form.label :キャプションを書く %></p>
-    <p class="textarea"><%= form.text_field :content %></p>
-  </div>
+    <p><%= form.label :本文 %></p>
+    <%= form.text_field :content %>
+  </div><br>
   <%= form.submit value="投稿" %>
-<% end %>
+<% end %><br>
 <span class="link_btn"><%= link_to "もどる", pictures_path %></span>

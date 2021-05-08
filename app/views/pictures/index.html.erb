@@ -1,27 +1,13 @@
 <h1>投稿一覧</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>投稿者</th>
-    <th>タイトル</th>
-    <th>本文</th>
-    <th>画像</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @pictures.each do |picture| %>
-        <td><%= picture.user.name %></td>
-        <td><%= picture.title %></td>
-        <td><%= picture.content %></td>
-        <td><%= picture.image %></td>
-        <td><%= link_to '詳細', picture %></td>
-        <% if picture.user.id == current_user.id %>
-          <td><%= link_to '編集', edit_picture_path(picture) %></td>
-          <td><%= link_to '削除', picture, method: :delete, data: { confirm: '本当に消してもいいですか？' } %></td>
-        <% end %>          
-      </tr>
-  <% end %>
-</table>
-<%= link_to '投稿', new_picture_path %>
+<% @pictures.each do |picture| %>
+  <p>
+    投稿者：<%= picture.user.name %>　
+    タイトル：<%= picture.title %>
+  </p>
+  <%= link_to '詳細', picture %>
+  <% if picture.user.id == current_user.id %>
+    <td><%= link_to '編集', edit_picture_path(picture) %></td>
+    <td><%= link_to '削除', picture, method: :delete, data: { confirm: '本当に消してもいいですか？' } %></td>
+  <% end %>          
+<% end %><br><br>
+<%= link_to '新規投稿', new_picture_path %>
