@@ -10,14 +10,20 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "投稿一覧", pictures_path %>
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_path %>
-      <%= link_to "ログイン", new_session_path %>
-    <% end %>
+    <header>
+    <div class="box">
+      <img src="/assets/ig_header.jpg" alt="" width= 100% height=300px>
+      <p class="header_title">IGClone</p>
+      <% if logged_in? %>
+        <p class="header_btn_prof"><%= link_to "プロフィール", user_path(current_user.id) %></p>
+        <p class="header_btn_post"><%= link_to "投稿一覧", pictures_path %></p>
+        <p class="header_btn_lgout"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></p>
+      <% else %>
+        <p class="header_btn_new"><%= link_to "新規登録", new_user_path %></p>
+        <p class="header_btn_lgin"><%= link_to "ログイン", new_session_path %></p>
+      <% end %>
+      </div>
+    </header>
     <%= yield %><br>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>

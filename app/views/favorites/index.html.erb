@@ -1,25 +1,16 @@
-<table>
-  <% if @favorites.empty? %>
-    <h2>まだお気に入りがありません。</h2>
-  <% else %>
-    <h2>お気に入りリスト</h2>
-    <tr>
-      <th>投稿者</th>
-      <th>タイトル</th>
-      <th>本文</th>
-      <th>Image</th>
-    </tr>
-  <% end %>
-<% @favorites.each do |favorite| %>
-  <tr>
-    <% if favorite.user_id == current_user.id %>
-      <td><%= favorite.picture.user.name %></td>
-      <td><%= favorite.picture.title %></td>
-      <td><%= favorite.picture.content %></td>
-      <% if favorite.picture.image.url%>
-        <td><%= image_tag favorite.picture.image.url %></td>
-      <% end %>
-    <% end %>      
-  </tr>
+<% if @favorites.empty? %>
+  <h2>まだお気に入りがありません。</h2>
+<% else %>
+  <h2>お気に入りリスト</h2>
 <% end %>
-</table>
+<% @favorites.each do |favorite| %>
+  <% if favorite.user_id == current_user.id %>
+    <p class="text">投稿者：<%= favorite.picture.user.name %></p>
+    <p class="text">タイトル：<%= favorite.picture.title %></p>
+    <p class="text">本文：<%= favorite.picture.content %></p>
+    <% if favorite.picture.image.url%>
+      <p class="text">Image<br><%= image_tag favorite.picture.image.url %></p>
+    <% end %>
+  <% end %>      
+<% end %><br>
+<span class="btn_link"><%= link_to "一覧画面にもどる", pictures_path %></span>

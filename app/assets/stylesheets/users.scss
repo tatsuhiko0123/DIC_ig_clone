@@ -1,3 +1,119 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//-------------------------共通CSS-------------------------
+body {
+  background: linear-gradient(-135deg, #E4A972, #9941D8);
+  text-align: center;
+  min-height: 1200px;
+}
+.box {  
+    position: relative;
+}
+.box p {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+.box p.header_title {
+  position: absolute;
+  font-size: 70px;
+  top: 10px;
+  left: 50px;
+}
+.box p.header_btn_prof {
+  font-size:0.8em;
+  display:block;
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+  background:#9cf579;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+.box p.header_btn_post {
+  font-size:0.8em;
+  display:block;
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+  background:#6feaee;
+  position: absolute;
+  top: 200px;
+  left: 180px;
+}
+.box p.header_btn_lgout {
+  font-size:0.8em;
+  display:block;
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+  background:#f35858;
+  position: absolute;
+  top: 200px;
+  left: 310px;
+}
+.box p.header_btn_new {
+  font-size:0.8em;
+  display:block;
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+  background:#f3dc58;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+.box p.header_btn_lgin {
+  font-size:0.8em;
+  display:block;
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+  background:#f358c5;
+  position: absolute;
+  top: 200px;
+  left: 180px;
+}
+.btn_link {
+  font-size:0.8em;
+  display: inline-block;
+  padding: 5px;
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border: 1px solid rgb(255, 255, 255);  
+}
+.btn_link:hover {
+  transition: all .2s linear;
+  background: rgb(244, 86, 250);
+}
+//-------------------------usersCSS-------------------------
+.text {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.textarea {
+  margin-top: 0;
+}
+.user_new_title {
+  color: rgb(220, 216, 236);
+}

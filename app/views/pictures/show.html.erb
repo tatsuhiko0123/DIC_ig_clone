@@ -1,15 +1,15 @@
 <h1>詳細画面</h1>
-<p class="text">タイトル : <%= @picture.title %></p>
-<p class="text">本文 : <%= @picture.content %></p>
 <p>
-  <strong>Image : </strong>
+  <strong>Image</strong><br>
   <%= image_tag @picture.image.url %>
 </p>
+<p class="text">タイトル : <%= @picture.title %></p>
+<p class="text">本文 : <%= @picture.content %></p><br>
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <span class="btn_other"><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></span>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
+    <span class="btn_other"><%= link_to 'お気に入り登録する', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %></span>
   <% end %>
 <% end %>
-<span class="link_btn"><%= link_to "一覧画面にもどる", pictures_path %></span>
+<span class="btn_other"><%= link_to "一覧画面にもどる", pictures_path %></span>

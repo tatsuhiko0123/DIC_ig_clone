@@ -3,8 +3,8 @@
     <%= image_tag @user.image.url %>
   <% end %>
 </p>
-<p>ユーザー名：<%= @user.name %></p>
-<p>メールアドレス：<%= @user.email %></p>
-<%= link_to "プロフィール編集", edit_user_path(@user.id) %>
-<%= link_to "お気に入り一覧", favorites_path%>
-<%= link_to "一覧画面にもどる", pictures_path %>
+<p class="text">ユーザー名：<%= @user.name %></p>
+<p class="text">メールアドレス：<%= @user.email %></p><br>
+<span class="btn_link"><%= link_to "プロフィール編集", edit_user_path(@user.id) %></span>
+<span class="btn_link"><%= link_to "お気に入り一覧", favorites_path%></span>
+<span class="btn_link"><%= link_to "一覧画面にもどる", pictures_path %></span>
